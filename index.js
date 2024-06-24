@@ -54,7 +54,7 @@ async (err, address) => {
 });
 
 //if only the short url is provided to api/short_url, then we get the associated original url and redirect the user to the original
-app.get("/api/short_url/:short_url", async (req,res) => {
+app.get("/api/shorturl/:short_url", async (req,res) => {
   const shorturl = req.params.short_url
   const urlDoc = await urls.findOne({ short_url: +shorturl })
   res.redirect(urlDoc.url)
